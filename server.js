@@ -11,7 +11,7 @@ const image = require("./controllers/image");
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
+      host : 'postgresql-animated-04327',
       port : 5432,
       user : 'postgres',
       password : '2682',
@@ -27,26 +27,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const database = {
-    users: [
-        {
-            id: "123",
-            name: "John",
-            email: "johndoe@gmail.com",
-            password: "123456",
-            entries: 0,
-            joined: new Date()
-        },
-        {
-            id: "124",
-            name: "Kathy",
-            email: "kathyrc@gmail.com",
-            password: "654321",
-            entries: 0,
-            joined: new Date()
-        }
-    ]
-}
 
 
 app.get("/", (req,res) => {
